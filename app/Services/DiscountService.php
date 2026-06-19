@@ -32,5 +32,7 @@ class DiscountService
                 throw new HttpException(400, 'Fixed discount value, must not more than the original value.');
             }
         }
+
+        return $this->strategy->calculate($price);
     }
 }
